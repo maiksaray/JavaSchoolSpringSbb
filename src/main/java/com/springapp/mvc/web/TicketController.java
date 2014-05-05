@@ -83,7 +83,7 @@ public class TicketController {
         if (ticket == null) return "ticketRemovalFail";
         String trainId = String.valueOf(ticket.getTrain().getTrainId());
         if (requestProcessor.removeTicket(ticket))
-            return "redirect:/showfortrain/" + trainId;
+            return "redirect:/tickets/showfortrain/" + trainId;
         else
             return "ticketRemovalFail";
     }
