@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="com.springapp.mvc.model.Passenger"/>
+        <mapping class="com.springapp.mvc.model.Station"/>
+        <mapping class="com.springapp.mvc.model.Ticket"/>
+        <mapping class="com.springapp.mvc.model.Train"/>
+        <mapping class="com.springapp.mvc.model.Schedule"/>
+        <mapping class="com.springapp.mvc.model.Password"/>
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

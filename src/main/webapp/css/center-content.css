@@ -1,0 +1,45 @@
+body {
+    text-align: center; /* Center in IE */
+    background-color: #f6f6f6 ;
+}
+
+#content {
+    /*text-align: left; *//* reset text-align for IE */
+    margin: 0 auto; /* Center in other browsers */
+    width: 800px;
+    z-index: 100;
+}
+
+html {
+    overflow: -moz-scrollbars-vertical; /* Force vertical scrollbar in FF */
+}
+
+.navigation-bar a {
+    font: bold 18px Arial;
+    text-decoration: none;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border: 1px solid #CCCCCC;
+    display:block;
+    width:70px;
+    text-align: left;
+    z-index: 0;
+    background-color: #f1f1f1;
+}
+
+.navigation a{
+    font: bold 18px Arial;
+    text-decoration: none;
+    color: #333333;
+    padding: 2px 6px 2px 6px;
+    border: 1px solid #CCCCCC;
+    background-color: #f1f1f1;
+}
+a{
+    font: bold 16px Arial;
+    text-decoration: none;
+    color: #333333;
+    /*padding: 2px 6px 2px 6px;*/
+    /*border: 1px solid #CCCCCC;*/
+    background-color: #f1f1f1;
+}

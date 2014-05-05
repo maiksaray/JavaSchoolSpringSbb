@@ -1,0 +1,36 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                 http://www.springframework.org/schema/security
+                 http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+
+    <http access-denied-page="/error403">
+        <intercept-url pattern="/index" access="ROLE_USER,ROLE_ANONYMOUS, ROLE_ADMIN"/>
+        <intercept-url pattern="/trains" access="ROLE_USER,ROLE_ANONYMOUS, ROLE_ADMIN"/>
+        <intercept-url pattern="/stations" access="ROLE_USER,ROLE_ANONYMOUS, ROLE_ADMIN"/>
+        <intercept-url pattern="/stations/remove/*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/stations/create" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/trains/remove/*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/trains/create" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/trains/create/submit" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/tickets/showfortrain/*" access="ROLE_ADMIN"/>
+        <intercept-url pattern="/tickets/remove/*" access="ROLE_ADMIN"/>
+        <form-login login-page="/login" default-target-url="/index" authentication-failure-url="/login?error=true"/>
+        <logout logout-url="/logout" logout-success-url="/index"/>
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
+        <remember-me/>
+    </http>
+
+    <global-method-security secured-annotations="enabled" />
+
+    <authentication-manager>
+        <authentication-provider>
+            <user-service>
+                <user name="admin" password="123" authorities="ROLE_ADMIN"/>
+            </user-service>
+        </authentication-provider>
+    </authentication-manager>
+</beans:beans>
